@@ -33,3 +33,16 @@ Another important option tested was the ability to pass a custom **output** fold
 dotnet publish -c Release -o myreleasefolder
 ```
 
+### Other options as a note
+
+You can also add additional output locations to the `<DocumentationFile>` node.
+
+```xml
+ <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\netcoreapp1.1\copydocfile-example.xml</DocumentationFile>
+    <!-- creates the file in the root of the project -->
+    <DocumentationFile>copydocfile-example.xml</DocumentationFile>
+    <!-- Creates the file in a "docs" folder -->
+    <DocumentationFile>docs\copydocfile-example.xml</DocumentationFile>
+  </PropertyGroup>
+```
