@@ -1,12 +1,12 @@
 # copydocfile-example
 
-Addresses [Issue #795](https://github.com/dotnet/sdk/issues/795)
+See GitHub [Issue #795](https://github.com/dotnet/sdk/issues/795) for the details and discussion.
 
-Since the conversion from project.json format to csproj the `<DocumentationFile>` no longer is automatically copied to the output folder during publish.
+One of the [undocumented changes](https://docs.microsoft.com/en-us/dotnet/articles/core/migration/) of converting from project.json to csproj, was the `<DocumentationFile>` no longer automatically copied to the output folder during the build or publish process.
+
+There have been multiple solutions, both `pre` and `post` publish scripts. However, understanding how MSBUILD works and finding the simplest way is key. Thanks to [Eric Erhardt](https://github.com/eerhardt)'s [latest comment here](https://github.com/dotnet/sdk/issues/795#issuecomment-289782712) I think that this is the cleanest way.
 
 Add the following snippet to the .csproj to enable the copy of the documentation file to the output folder.
-
-There have been multiple solutions, both `pre` and `post` publish scripts. However understanding how MSBUILD works and finding the simplest way is key. Thanks to [Eric Erhardt](https://github.com/eerhardt)'s [latest comment here](https://github.com/dotnet/sdk/issues/795#issuecomment-289782712) I think that this is the cleanest way.
 
 ```xml
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
