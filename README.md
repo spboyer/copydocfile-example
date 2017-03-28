@@ -1,4 +1,4 @@
-# copydocfile-example
+## copydocfile-example
 
 See GitHub [Issue #795](https://github.com/dotnet/sdk/issues/795) for the details and discussion.
 
@@ -33,7 +33,7 @@ Another important option tested was the ability to pass a custom **output** fold
 dotnet publish -c Release -o myreleasefolder
 ```
 
-### Other options as a note
+## Other options
 
 You can also add additional output locations to the `<DocumentationFile>` node.
 
@@ -46,3 +46,9 @@ You can also add additional output locations to the `<DocumentationFile>` node.
     <DocumentationFile>docs\copydocfile-example.xml</DocumentationFile>
   </PropertyGroup>
 ```
+
+---
+
+> [tattoocoder.com](https://tattoocoder.com) &nbsp;&middot;&nbsp;
+> GitHub [@spboyer](https://github.com/spboyer) &nbsp;&middot;&nbsp;
+> Twitter [@spboyer](https://twitter.com/spboyer)
