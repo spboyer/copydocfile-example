@@ -2,7 +2,7 @@
 
 See GitHub [Issue #795](https://github.com/dotnet/sdk/issues/795) for the details and discussion.
 
-One of the [undocumented changes](https://docs.microsoft.com/en-us/dotnet/articles/core/migration/) of converting from project.json to csproj, was the `<DocumentationFile>` no longer automatically copied to the output folder during the build or publish process.
+One of the [undocumented changes](https://docs.microsoft.com/dotnet/articles/core/migration/?WT.mc_id=dotnet-0000-shboyer) of converting from project.json to csproj, was the `<DocumentationFile>` no longer automatically copied to the output folder during the build or publish process.
 
 There have been multiple solutions, both `pre` and `post` publish scripts. However, understanding how MSBUILD works and finding the simplest way is key. Thanks to [Eric Erhardt](https://github.com/eerhardt)'s [latest comment here](https://github.com/dotnet/sdk/issues/795#issuecomment-289782712) I think that this is the cleanest way.
 
